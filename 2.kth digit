@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        int K = sc.nextInt();
+
+        long power = (long) Math.pow(A, B);
+        int i = 1;
+
+        while (power > 0) {
+            int ans = (int) (power % 10);
+
+            if (i == K) {
+                System.out.println(ans);
+                return;
+            }
+
+            i++;
+            power = power / 10;
+        }
+
+    }
+}
