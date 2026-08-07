@@ -1,0 +1,40 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("enter start range");
+        Scanner scan =new Scanner(System.in);
+        int l=scan.nextInt();
+        System.out.println("enter end range");
+        int r=scan.nextInt();
+        ArrayList<Integer> arr=new  ArrayList<>();
+        for(int i=0;i<=r;i++)
+        {
+            arr.add(1);
+        }
+        arr.set(0,0);
+        if(r>=1)
+        {
+            arr.set(1,0);
+        }
+        for(int i=2;i<=Math.sqrt(r);i++)
+        {
+            if(arr.get(i)==1)
+            {
+                for(int j=2*i;j<=r;j=j+i)
+                {
+                    arr.set(j,0);
+                }
+            }
+        }
+     long sum=0;
+      for(int i=l;i<=r;i++)
+      {
+         if(arr.get(i)==1)
+         {
+             sum=sum+i;
+         }
+      }
+      System.out.println(sum);
+        
+    }
+}
