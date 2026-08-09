@@ -1,0 +1,24 @@
+
+class Main {
+static int arraytraverse(int a[],int n,int target,int i)
+{
+    if(i>=n){
+        return -1;
+    }
+    if(a[i]==target){
+        return i;
+    }
+    else
+    {
+        
+        return arraytraverse( a, n,target,i+1);
+    }
+}
+public static void main(String[] args) 
+    {
+       int a[]={1,23,4,25,16};
+       int target=25;
+        int result=arraytraverse(a,5,target,0);
+        System.out.print("a["+result+"]="+a[result]);
+    }
+}
