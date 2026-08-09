@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class Main {
+static int divisors(int n,int i)
+{
+    if(i>n)
+    {
+        return 0;
+    }
+    if(n%i==0)
+    {
+       System.out.print(i+" ");
+    }
+    return divisors(n,i+1);
+}
+public static void main(String[] args) 
+    {
+       Scanner scan=new Scanner(System.in);
+       System.out.print("enter a no:");
+       int n=scan.nextInt();
+       divisors(n,1);
+        
+    }
+}
