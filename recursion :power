@@ -1,0 +1,20 @@
+import java.util.Scanner;
+class Main {
+static int power(int n,int p)
+{
+    if(p==0)
+    {
+        return 1;
+    }
+    return n*power(n,p-1);
+}
+public static void main(String[] args) 
+    {
+       Scanner scan=new Scanner(System.in);
+       int n=scan.nextInt();
+       int p=scan.nextInt();
+       int result=power(n,p);
+       System.out.println(result);
+        
+    }
+}
