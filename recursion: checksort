@@ -1,0 +1,22 @@
+
+class Main {
+static boolean checksort(int a[],int n,int i)
+{
+    if(i>=n-1)
+    {
+        return true;
+    }
+    if(a[i]>a[i+1])
+    {
+       return false;
+    }
+        
+    return checksort(a, n,i+1);
+}
+public static void main(String[] args) 
+    {
+       int a[]={1,2,3,4,5};
+      boolean sort=checksort(a,5,0);
+        System.out.print(sort);
+    }
+}
