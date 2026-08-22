@@ -1,0 +1,37 @@
+class Solution {
+    public ArrayList<Integer> findDuplicates(int[] arr) {
+
+        ArrayList<Integer> res = new ArrayList<>();
+
+        for (int i = 0; i < arr.length; i++) {
+            int count = 1;
+
+            // Count occurrences of arr[i]
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i] == arr[j] && j != i) {
+                    count++;
+                }
+            }
+
+            // If duplicate is found
+            if (count > 1) {
+                int flag = 1;
+
+                // Check if already added to result
+                for (int k = 0; k < res.size(); k++) {
+                    if (res.get(k) == arr[i]) {
+                        flag = 0;
+                        break;
+                    }
+                }
+
+                // Add only once
+                if (flag == 1) {
+                    res.add(arr[i]);
+                }
+            }
+        }
+
+        return res;
+    }
+}
