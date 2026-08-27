@@ -1,0 +1,42 @@
+class Solution
+{
+    static long checkheight(int[] tree, int n, int h) {
+        long wood = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (tree[i] > h) {
+                wood += tree[i] - h;
+            }
+        }
+
+        return wood;
+    }
+
+    static int maxHeight(int[] tree, int k) {
+        int n = tree.length;
+
+        int low = 0;
+        int high = tree[0];
+
+        for (int i = 0; i < n; i++) {
+            high = Math.max(high, tree[i]);
+        }
+
+        int ans = 0;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            long wood = checkheight(tree, n, mid);
+
+            if (wood >= k) {
+                ans = mid;
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+
+        return ans;
+    }
+}
