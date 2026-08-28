@@ -1,0 +1,45 @@
+class Solution
+{
+    int maxPeopleDefeated(int n)
+    {
+        long i = 1;
+        long j = (long)Math.sqrt(n);
+        long ans = 0;
+
+        while (i <= j)
+        {
+            long mid = (i + j) / 2;
+
+          long sum = mid * (mid + 1) * (2 * mid + 1) / 6;
+
+            if (sum <= n)
+            {
+                ans = mid;
+                i = mid + 1;
+            }
+            else
+            {
+                j = mid - 1;
+            }
+        }
+
+        return (int)ans;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
