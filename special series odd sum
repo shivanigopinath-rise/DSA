@@ -2,7 +2,7 @@ import java.util.Scanner;
 class Main{
     static int findnthTerm(int n){
         int sum=0,term=0;
-        for(int i=1;i<=2*n-1;i++){// for odd for even 0 to range
+        for(int i=1;i<=2*n-1;i+=2){// for odd for even 0 to range
             sum=sum+i;
             term=term+sum;
         }
